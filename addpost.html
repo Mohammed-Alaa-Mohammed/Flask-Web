@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center">نشر منشور جديد</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form method="POST" action="{{ url_for('add_post') }}" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label" style="font-size: 20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">عنوان المنشور :</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="أدخل عنوان المنشور" required>
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label" style="font-size: 20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">محتوى المنشور :</label>
+                    <textarea class="form-control" id="content" name="content" rows="5" placeholder="أدخل محتوى المنشور" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="file" class="form-label" style="font-size: 20px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">رفع ملف (اختياري) :</label>
+                    <input type="file" class="form-control" id="file" name="file">
+                    <small class="text-muted">يمكنك رفع ملفات مثل الصور أو المستندات.</small>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 50%; font-weight: bold;  font-size: 20px; border-radius: 5px; box-shadow: 0 0 10px 0px #ffffff;"> نشر المنشور الآن </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

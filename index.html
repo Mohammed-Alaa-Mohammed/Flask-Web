@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="text-center">المنشورات الأخيرة</h1>
+    <div class="row">
+        {% for post in posts %}
+        <div class="col-md-6 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    
+                    <h4 class="card-title">عنوان المنشور<b> : {{ post.title }}</h4>
+                    <b><p class="card-text">الموضوع : {{ post.content[:150] }}...</p>
+                    <b class="text-muted">بواسطة : {{ post.user.username }} <br>في {{ post.created_at }}</b>
+                    <a href="{{ url_for('all_posts') }}" class="btn btn-outline-primary mt-3" style="font-size: 17px; font-weight: bold; margin-right: 20px; margin-bottom: 10px;">عرض جميع المنشورات</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
